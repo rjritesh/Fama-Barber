@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Poppins';
+  --font-display:'Poppins' ;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  @apply bg-black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+::selection {
+  @apply bg-primary-500 text-white;
+}
+
+/* Custom styles for forms */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+/* Custom animations */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Hover effects */
+.hover-grow {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-grow:hover {
+  transform: scale(1.02);
+  @apply shadow-service;
+}
+
+/* Custom gradients */
+.hero-gradient {
+  background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.7));
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #eb8c0f, #f3ba6f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-500;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-600;
+}
